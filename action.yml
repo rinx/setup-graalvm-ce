@@ -7,15 +7,20 @@ branding:
 inputs:
   graalvm-version:
     description: 'GraalVM version: ex.) 19.3.0'
-    required: true
+    required: false
     default: '19.3.0'
   java-version:
     description: 'Java version: ex.) java8, java11'
-    required: true
+    required: false
     default: 'java8'
+  platform:
+    description: 'linux, darwin or windows'
+    required: false
+    default: 'linux'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.graalvm-version }}
     - ${{ inputs.java-version }}
+    - ${{ inputs.platform }}
