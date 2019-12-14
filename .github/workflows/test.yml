@@ -2,7 +2,7 @@ name: Test
 on: push
 
 jobs:
-  test-linux:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: setup-graalvm-ce
@@ -10,18 +10,6 @@ jobs:
         with:
           graalvm-version: "19.3.0"
           java-version: "java11"
-      - name: setup-native-image
-        run: |
-          gu install native-image
-  test-macos:
-    runs-on: macos-latest
-    steps:
-      - name: setup-graalvm-ce
-        uses: rinx/setup-graalvm-ce@master
-        with:
-          graalvm-version: "19.3.0"
-          java-version: "java11"
-          platform: "darwin"
       - name: setup-native-image
         run: |
           gu install native-image

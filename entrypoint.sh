@@ -3,13 +3,12 @@
 set -e
 GRAALVM_VERSION=$1
 JAVA_VERSION=$2
-PLATFORM=$3
 TMP_GRAALVM_HOME=/github/home/graalvm
 GRAALVM_HOME=/home/runner/work/_temp/_github_home/graalvm
 
 echo "Install GRAALVM $GRAALVM_VERSION $JAVA_VERSION"
 
-GRAALVM_TGZ_URI="https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${GRAALVM_VERSION}/graalvm-ce-${JAVA_VERSION}-${PLATFORM}-amd64-${GRAALVM_VERSION}.tar.gz"
+GRAALVM_TGZ_URI="https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${GRAALVM_VERSION}/graalvm-ce-${JAVA_VERSION}-linux-amd64-${GRAALVM_VERSION}.tar.gz"
 
 curl -sL $GRAALVM_TGZ_URI --output graalvm.tar.gz
 
