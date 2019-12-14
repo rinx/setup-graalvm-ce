@@ -1,0 +1,21 @@
+name: 'Setup GraalVM CE'
+description: 'GitHub Action for setting up GraalVM CE of specified version'
+author: 'rinx <rintaro.okamura@gmail.com>'
+branding:
+  icon: 'box'
+  color: 'blue'
+inputs:
+  graalvm-version:
+    description: 'GraalVM version: ex.) 19.3.0'
+    required: true
+    default: '19.3.0'
+  java-version:
+    description: 'Java version: ex.) java8, java11'
+    required: true
+    default: 'java8'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.graalvm-version }}
+    - ${{ inputs.java-version }}
