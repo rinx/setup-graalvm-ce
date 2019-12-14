@@ -14,6 +14,7 @@ curl -sL $GRAALVM_TGZ_URI --output graalvm.tar.gz
 
 mkdir -p $TMP_GRAALVM_HOME
 tar -xf graalvm.tar.gz -C $TMP_GRAALVM_HOME --strip-components=1
+chmod -R a+rwx $TMP_GRAALVM_HOME
 
 echo "::set-env name=PATH::$PATH:$GRAALVM_HOME/bin"
 echo "::set-env name=GRAALVM_HOME::$GRAALVM_HOME"
