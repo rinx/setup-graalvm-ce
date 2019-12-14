@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: setup-graalvm-ce
-        uses: rinx/setup-graalvm-ce@master
+        uses: rinx/setup-graalvm-ce@v0.0.1
         with:
           graalvm-version: "19.3.0"
           java-version: "java11"
