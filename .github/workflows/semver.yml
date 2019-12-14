@@ -23,5 +23,5 @@ jobs:
           git remote set-url origin "https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push origin --tags
         env:
-          GITHUB_USER: rinx
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ secrets.SETUP_GRAALVM_CE_USER }}
+          GITHUB_TOKEN: ${{ secrets.SETUP_GRAALVM_CE_TOKEN }}
