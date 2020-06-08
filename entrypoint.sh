@@ -19,8 +19,7 @@ chmod -R a+rwx $TMP_GRAALVM_HOME
 
 if [ "$NATIVE_IMAGE_ENABLED" = "true" ]; then
     echo "Install native-image"
-    export PATH=$PATH:$TMP_GRAALVM_HOME/bin
-    gu install native-image
+    $TMP_GRAALVM_HOME/bin/gu install native-image
 fi
 
 echo "::set-env name=PATH::$PATH:$GRAALVM_HOME/bin"
