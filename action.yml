@@ -13,14 +13,9 @@ inputs:
     description: 'Java version: ex.) java8, java11'
     required: true
     default: 'java8'
-  native-image:
-    description: 'enable native-image command'
-    required: true
-    default: 'true'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.graalvm-version }}
     - ${{ inputs.java-version }}
-    - ${{ inputs.native-image }}

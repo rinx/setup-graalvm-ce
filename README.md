@@ -16,12 +16,6 @@ Java version (required)
 
 Default: java8
 
-### `native-image`
-
-Install native-image
-
-Default: true
-
 ## Examples
 
 ```yaml
@@ -35,8 +29,8 @@ jobs:
         with:
           graalvm-version: "20.1.0"
           java-version: "java11"
-          native-image: "true"
       - name: version
         run: |
           java -version
+          gu install native-image
           native-image --version

@@ -3,7 +3,6 @@
 set -e
 GRAALVM_VERSION=$1
 JAVA_VERSION=$2
-NATIVE_IMAGE_ENABLED=$3
 TMP_GRAALVM_HOME=/github/home/graalvm
 GRAALVM_HOME=/home/runner/work/_temp/_github_home/graalvm
 
@@ -16,11 +15,7 @@ curl -sL $GRAALVM_TGZ_URI --output graalvm.tar.gz
 mkdir -p $TMP_GRAALVM_HOME
 tar -xf graalvm.tar.gz -C $TMP_GRAALVM_HOME --strip-components=1
 chmod -R a+rwx $TMP_GRAALVM_HOME
-
-if [ "$NATIVE_IMAGE_ENABLED" = "true" ]; then
-    echo "Install native-image"
-    $TMP_GRAALVM_HOME/bin/gu install native-image
-fi
+chown -R runner:runner $TMP_GRAALVM_HOME
 
 echo "::set-env name=PATH::$PATH:$GRAALVM_HOME/bin"
 echo "::set-env name=GRAALVM_HOME::$GRAALVM_HOME"
