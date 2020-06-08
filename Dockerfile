@@ -1,11 +1,9 @@
-FROM alpine
+FROM ubuntu:devel
 
-RUN apk update \
-    && apk upgrade \
-    && apk --update-cache add --no-cache \
-    ca-certificates \
+RUN apt-get update \
+    && apt-get install -y \
     curl \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
 
