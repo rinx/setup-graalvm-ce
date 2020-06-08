@@ -6,16 +6,21 @@ branding:
   color: 'blue'
 inputs:
   graalvm-version:
-    description: 'GraalVM version: ex.) 19.3.0'
+    description: 'GraalVM version: ex.) 19.3.0, 20.1.0'
     required: true
-    default: '19.3.0'
+    default: '20.1.0'
   java-version:
     description: 'Java version: ex.) java8, java11'
     required: true
     default: 'java8'
+  native-image:
+    description: 'enable native-image command'
+    required: true
+    default: 'true'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.graalvm-version }}
     - ${{ inputs.java-version }}
+    - ${{ inputs.native-image }}
