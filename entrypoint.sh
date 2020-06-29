@@ -22,7 +22,7 @@ if [ "$NATIVE_IMAGE_ENABLED" = "true" ]; then
     $TMP_GRAALVM_HOME/bin/gu install native-image
 fi
 
-echo "::set-env name=PATH::$PATH:$GRAALVM_HOME/bin"
+echo "::set-env name=PATH::$GRAALVM_HOME/bin:$PATH"
 echo "::set-env name=GRAALVM_HOME::$GRAALVM_HOME"
 echo "::set-env name=GRAALVM_VERSION::$GRAALVM_VERSION"
 echo "::set-env name=JAVA_HOME::$GRAALVM_HOME"
