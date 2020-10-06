@@ -8,7 +8,7 @@ This is a GitHub Action for setting up GraalVM CE of specified version.
 
 GraalVM version (required)
 
-Default: 20.1.0
+Default: 20.2.0
 
 ### `java-version`
 
@@ -31,9 +31,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: setup-graalvm-ce
-        uses: rinx/setup-graalvm-ce@v0.0.4
+        uses: rinx/setup-graalvm-ce@v0.0.5
         with:
-          graalvm-version: "20.1.0"
+          graalvm-version: "20.2.0"
           java-version: "java11"
           native-image: "true"
       - name: version
