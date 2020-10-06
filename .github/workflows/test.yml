@@ -8,7 +8,7 @@ jobs:
       - name: setup-graalvm-ce
         uses: rinx/setup-graalvm-ce@master
         with:
-          graalvm-version: "20.1.0"
+          graalvm-version: "20.2.0"
           java-version: "java11"
           native-image: "true"
       - name: native-image version

@@ -8,7 +8,7 @@ inputs:
   graalvm-version:
     description: 'GraalVM version: ex.) 19.3.0, 20.1.0'
     required: true
-    default: '20.1.0'
+    default: '20.2.0'
   java-version:
     description: 'Java version: ex.) java8, java11'
     required: true
